@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
 const transportDetailsSchema = new mongoose.Schema({
-  pan: { type: String, required: false },
-  gst: { type: String, required: false },
-  cin: { type: String, required: false },
   grNo: { type: String, required: false },
   date: { type: Date, required: false },
   from: { type: String, required: false },
@@ -34,10 +31,10 @@ const transportDetailsSchema = new mongoose.Schema({
   rate: { type: Number, required: false },
   freight: { type: Number, required: false },
   weight: { type: Number, required: false },
-  dimensionalWeight: { type: Number },
+  dimensionalWeight: { type: String },
   totalAmount: { type: Number, required: false },
   paymentTerms: { type: String, required: false },
-  gstType: { type: String, enum: ['CGST', 'SGST', 'IGST'], required: false },
+  gstType: { type: String,  required: false },
 }, { timestamps: true });
 
 module.exports = mongoose.model('TransportDetails', transportDetailsSchema);
