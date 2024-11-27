@@ -62,7 +62,7 @@ const ViewConsignment = () => {
     </div>
     <div class="flex flex-col text-left ml-4">
         <p class="text-xs"><strong class="text-gray-700">Date:</strong> ${moment(selectedConsignment.date).format('DD-MM-YYYY')}</p>
-        <p class="text-xs"><strong class="text-gray-700">GR No:</strong> ${selectedConsignment.grNo}</p>
+        <p class="text-xs"><strong class="text-gray-700">Consignment No:</strong> ${selectedConsignment.grNo}</p>
     </div>
 </div>
 
@@ -70,7 +70,7 @@ const ViewConsignment = () => {
       <!-- Consignor Section -->
         <div class="bg-black-300 flex p-4 justify-between h-full w-full">
         <p><strong class="font-bold">Pan No:</strong>AABCT2033Q</p>
-        <p><strong class="font-bold">GSTIN:</strong>19ABCT2033Q1Z1</p>
+        <p><strong class="font-bold">GSTIN:</strong>19AABCT2033Q1Z1</p>
         <p><strong class="font-bold">CIN:</strong>U60210WB1988PTC044123</p>
 
       </div>
@@ -86,6 +86,7 @@ const ViewConsignment = () => {
     <div>
       <p><strong class="text-gray-700">Name:</strong> ${selectedConsignment.consignor.name}</p>
       <p><strong class="text-gray-700">Address:</strong> ${selectedConsignment.consignor.address}</p>
+      <p><strong class="text-gray-700">GST:</strong> ${selectedConsignment.consignor.gst}</p>
     </div>
  
   </div>
@@ -101,54 +102,54 @@ const ViewConsignment = () => {
     <div>
       <p><strong class="text-gray-700">Name:</strong> ${selectedConsignment.consignee.name}</p>
       <p><strong class="text-gray-700">Address:</strong> ${selectedConsignment.consignee.address}</p>
+      <p><strong class="text-gray-700">Gst:</strong> ${selectedConsignment.consignee.gst}</p>
     </div>
 
   </div>
 </div>
 <div style="display: flex; padding: 16px; justify-content: space-between; width: 100%; border: 1px solid #000;">
   <div style="width: 48%; border-right: 1px solid #000; padding: 8px;">
-
+        <p><strong style="color: #4a4a4a;">From:</strong> ${selectedConsignment.from}</p>
+           <p><strong style="color: #4a4a4a;">Vehicle Type:</strong> ${selectedConsignment.vehicleType}</p>
+              <p><strong style="color: #4a4a4a;">Dimension:</strong> ${selectedConsignment.dimensionalWeight} kg</p>
+                   <p><strong style="color: #4a4a4a;">Weight:</strong> ${selectedConsignment.weight} kg</p>
+                           <p><strong style="color: #4a4a4a;">Vehicle No:</strong> ${selectedConsignment.vehicleNo}</p
                             <p><strong style="color: #4a4a4a;">Invoice No:</strong> ${selectedConsignment.invoice.no}</p>
                                     <p><strong style="color: #4a4a4a;">Invoice Date:</strong> ${moment(selectedConsignment.invoice.date).format('DD-MM-YYYY')}</p>
                                             <p><strong style="color: #4a4a4a;">Invoice Value:</strong> ₹${selectedConsignment.invoice.value}</p>
-                                      
-                                                            <p><strong style="color: #4a4a4a;">From:</strong> ${selectedConsignment.from}</p>
-                                                                    <p><strong style="color: #4a4a4a;">To:</strong> ${selectedConsignment.to}</p>
-        <p><strong style="color: #4a4a4a;">Mode:</strong> ${selectedConsignment.mode}</p>
-        <p><strong style="color: #4a4a4a;">Vehicle No:</strong> ${selectedConsignment.vehicleNo}</p>
-            <p><strong style="color: #4a4a4a;">Vehicle Type:</strong> ${selectedConsignment.vehicleType}</p>
 
-    <p><strong style="color: #4a4a4a;">Vehicle Type:</strong> ${selectedConsignment.vehicleType}</p>
+         
+
+
 
     <!-- Repeat for other fields -->
   </div>
 
   <div style="width: 48%; padding: 8px;">
-
-                      <p><strong style="color: #4a4a4a;">E-Way Bill No:</strong> ${selectedConsignment.eWayBillNo}</p>
-                      <p><strong style="color: #4a4a4a;">E-Way Bill Date:</strong>${moment(selectedConsignment.eWayBillDate).format('DD-MM-YYYY')}</p>
+               
+                      <p><strong style="color: #4a4a4a;">To:</strong> ${selectedConsignment.to}</p>
+                                                                                        <p><strong style="color: #4a4a4a;">E-Way Bill No:</strong> ${selectedConsignment.eWayBillNo}</p>
+                                                                                        <p><strong style="color: #4a4a4a;">E-Way Bill Date:</strong>${moment(selectedConsignment.eWayBillDate).format('DD-MM-YYYY')}</p>
                       <p><strong style="color: #4a4a4a;">Valid Upto:</strong>${moment(selectedConsignment.validUpto).format('DD-MM-YYYY')}</p>
-                      <p><strong style="color: #4a4a4a;">Quantity:</strong> ${selectedConsignment.quantity}</p>
+                                      
+
+        <p><strong style="color: #4a4a4a;">Mode:</strong> ${selectedConsignment.mode}</p>
                     <p><strong style="color: #4a4a4a;">No of Packages:</strong> ${selectedConsignment.noOfPackages}</p>
         <p><strong style="color: #4a4a4a;">Type of Packages:</strong> ${selectedConsignment.typeOfPackages}</p>
         <p><strong style="color: #4a4a4a;">Contents:</strong> ${selectedConsignment.contents}</p>
-
-        <p><strong style="color: #4a4a4a;">Weight:</strong> ${selectedConsignment.weight} kg</p>
-        <p><strong style="color: #4a4a4a;">Dimensional Weight:</strong> ${selectedConsignment.dimensionalWeight} kg</p>
     <!-- Repeat for other fields -->
   </div>
 </div>
-
 <div style="width: 100%; border: 1px solid #000; padding: 16px; margin-top: 16px;">
   <div style="display: flex;">
     <div style="width: 50%; border-right: 1px solid #000; padding-right: 8px;">
       <p><strong style="color: #4a4a4a;">Payment Terms</strong></p>
-      <div style="display: flex; justify-content: space-between;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
           <p>Cash</p><p>To Pay</p><p>To Be</p>
         </div>
-        <div>
-          <p style="text-align: center;">✓</p>
+        <div >
+          <p style="text-align: center; margin-top: 40px;">✓</p>
         </div>
         <p>${selectedConsignment.paymentTerms}</p>
       </div>
@@ -158,8 +159,15 @@ const ViewConsignment = () => {
     </div>
   </div>
 </div>
-
-
+ <div class="text-sm bg-black-300 p-2 w-full flex flex-col justify-between border-t border-black">
+               <div class="text-right mb-4 ">AT OWNER RISK</div>
+               <div class="flex justify-between">
+         
+                
+                 <div class="text-right"><strong style="color: #4a4a4a;">Remark:</strong> ${selectedConsignment.remark}</div>
+                  <div class="text-right">IBACODE:DLT-1673</div>
+               </div>
+             </div>
                            
         <!-- Terms and Conditions -->
               <div class="border-t border-black pt-0 text-xs">
@@ -316,7 +324,7 @@ export default ViewConsignment;
 
 //   const fetchConsignment = async () => {
 //     try {
-//       const response = await axios.get('http://localhost:5000/transport-details');
+//       const response = await axios.get('https://customer-module-rled.onrender.com/transport-details');
 //       console.log(response.data); // Check this in the console
 //       if (Array.isArray(response.data)) {
 //         setConsignment(response.data);
@@ -491,7 +499,7 @@ export default ViewConsignment;
 
 //   const fetchConsignment = async () => {
 //     try {
-//       const response = await axios.get('http://localhost:5000/transport-details');
+//       const response = await axios.get('https://customer-module-rled.onrender.com/transport-details');
 //       setConsignment(response.data); // Assuming response.data is an array
 //     } catch (error) {
 //       console.error('Error fetching consignment:', error);
@@ -665,7 +673,7 @@ export default ViewConsignment;
 
 //   const fetchConsignment = async () => {
 //     try {
-//       const response = await axios.get('http://localhost:5000/goods-receipts');
+//       const response = await axios.get('https://customer-module-rled.onrender.com/goods-receipts');
 //       setConsignment(response.data); // Assuming response.data is an array
 //     } catch (error) {
 //       console.error('Error fetching consignment:', error);

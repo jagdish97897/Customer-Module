@@ -19,9 +19,8 @@ function ConsignmentForm() {
     eWayBillNo: '',
     eWayBillDate: '',
     validUpto: '',
-    consignor: { name: '', address: '' },
-    consignee: { name: '', address: '' },
-    quantity: '',
+    consignor: { name: '', address: '', gst:'' },
+    consignee: { name: '', address: '', gst:'' },
     noOfPackages: '',
     typeOfPackages: '',
     contents: '',
@@ -106,7 +105,7 @@ function ConsignmentForm() {
             {/* Form Fields */}
             <div className="bg-white p-6 rounded-lg shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { label: 'GR No.', name: 'grNo', maxLength: 20, title: 'GR No. should be up to 20 characters' },
+                { label: 'Consignment No.', name: 'grNo', maxLength: 20, title: 'Consignment No. should be up to 20 characters' },
                 { label: 'Date', name: 'date', type: 'date' },
                 { label: 'From', name: 'from' },
                 { label: 'To', name: 'to' },
@@ -118,9 +117,10 @@ function ConsignmentForm() {
                 { label: 'Valid Upto', name: 'validUpto', type: 'date' },
                 { label: 'Consignor Name', name: 'consignor.name', maxLength: 50 },
                 { label: 'Consignor Address', name: 'consignor.address', maxLength: 100 },
+                { label: 'Consignor GST', name: 'consignor.gst', maxLength: 100 },
                 { label: 'Consignee Name', name: 'consignee.name', maxLength: 50 },
                 { label: 'Consignee Address', name: 'consignee.address', maxLength: 100 },
-                { label: 'Quantity', name: 'quantity', type: 'number', min: 0, max: 99999 },
+                { label: 'Consignee GST', name: 'consignee.gst', maxLength: 100 },
                 { label: 'Type Of Packages', name: 'typeOfPackages', type: 'String',  },
                 { label: 'No. of Packages', name: 'noOfPackages', type: 'number', min: 0, max: 999 },
                 { label: 'Contents', name: 'contents' },
@@ -128,9 +128,10 @@ function ConsignmentForm() {
                 { label: 'Invoice Date', name: 'invoice.date', type: 'date' },
                 { label: 'Invoice Value', name: 'invoice.value', type: 'number' },
                 { label: 'Weight', name: 'weight', type: 'number', min: 0, step: 1 },
-                { label: 'Dimensional Weight', name: 'dimensionalWeight', type: 'String',},
-                { label: 'Payment Terms(select branch)', name: 'paymentTerms' },
-                { label: 'Gst Type', name: 'gstType' }
+                { label: 'Dimension', name: 'dimensionalWeight', type: 'String',},
+                { label: 'Payment Terms(Write branch)', name: 'paymentTerms' },
+                { label: 'Gst Type', name: 'gstType' },
+                { label: 'Remark', name: 'remark' }
               ].map((field, index) => (
                 <div key={index} className="mb-4">
                   <label htmlFor={field.name} className="block text-sm font-medium text-gray-700">

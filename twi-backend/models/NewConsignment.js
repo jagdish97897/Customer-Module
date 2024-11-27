@@ -14,12 +14,13 @@ const transportDetailsSchema = new mongoose.Schema({
   consignor: {
     name: { type: String, required: false },
     address: { type: String, required: false },
+    gst: { type: String, required: false },
   },
   consignee: {
     name: { type: String, required: false },
     address: { type: String, required: false },
+    gst: { type: String, required: false },
   },
-  quantity: { type: Number, required: false },
   noOfPackages: { type: Number, required: false },
   typeOfPackages: { type: String, required: false },
   contents: { type: String, required: false },
@@ -35,6 +36,7 @@ const transportDetailsSchema = new mongoose.Schema({
   totalAmount: { type: Number, required: false },
   paymentTerms: { type: String, required: false },
   gstType: { type: String,  required: false },
+  remark: { type: String,  required: false },
 }, { timestamps: true });
 
 module.exports = mongoose.model('TransportDetails', transportDetailsSchema);
